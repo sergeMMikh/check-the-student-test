@@ -1,0 +1,8 @@
+.venv
+.idea
+env/
+venv/
+env.bak/
+venv.bak/
+samples/
+sample.txt
