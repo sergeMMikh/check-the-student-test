@@ -1,3 +1,5 @@
+import sys
+
 def find_narrow_spaces(filename):
     narrow_space = '\u202F'
     em_dash = '\u2014'
@@ -24,4 +26,7 @@ def find_narrow_spaces(filename):
 
 
 if __name__ == "__main__":
-    find_narrow_spaces("sample.txt")
+    if sys.argv[1]:
+        find_narrow_spaces(sys.argv[1])
+    else:
+        find_narrow_spaces("sample.txt")
