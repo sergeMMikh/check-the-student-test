@@ -1,4 +1,5 @@
 import sys
+import pyperclip
 
 
 def find_narrow_spaces(filename):
@@ -30,4 +31,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         find_narrow_spaces(sys.argv[1])
     else:
+        clipboard_text = pyperclip.paste()
+        with open("sample.txt", "w", encoding="utf-8") as f:
+            f.write(clipboard_text)
         find_narrow_spaces("sample.txt")
