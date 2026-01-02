@@ -10,7 +10,7 @@ def find_narrow_spaces(filename):
     with open(filename, 'r', encoding='utf-8') as f:
         lines = f.readlines()
 
-    count = [0,0,0]
+    count = [0, 0, 0]
 
     found = False
     for i, line in enumerate(lines, start=1):
@@ -31,7 +31,7 @@ def find_narrow_spaces(filename):
         if nbsp in line:
             print(f"Строка {i}: {line.strip()}")
             print(f"→ Найден неразрывный пробел (U+AO) на позиции: ", end='')
-            positions = [str(pos) for pos, char in enumerate(line) if char == em_dash]
+            positions = [str(pos) for pos, char in enumerate(line) if char == nbsp]
             print(", ".join(positions))
             found = True
             count[2] += 1
